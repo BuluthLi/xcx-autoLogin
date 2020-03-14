@@ -1,0 +1,74 @@
+/* pages/user/user.wxss */
+@import '../../templates/tabbar/tabbar.wxss';
+
+.wrapper {
+  box-sizing: border-box;
+
+}
+
+.user-box {
+  display: flex;
+  width: 100vw;
+  height: 200rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  align-items: center;
+  background-color: white;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.name-box {
+  flex: 1 0 auto;
+  margin-left: 30rpx;
+}
+
+.user-name {
+  font-size: 32rpx;
+  color: rgb(26, 26, 26);
+}
+
+.shop-name {
+  color: rgb(204, 204, 204);
+  font-size: 28rpx;
+}
+
+.tool-box {
+  margin-top: 40rpx;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  background-color: white;
+}
+
+.tool-item {
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  border-bottom: 2rpx solid rgb(238, 238, 238);
+}
+
+.tool-item:last-child {
+  border: none;
+}
+
+.tool-icon {
+  width: 36rpx;
+  height: auto;
+}
+
+.tool-title {
+  margin-left: 30rpx;
+  flex: 1 0 auto;
+  font-size: 32rpx;
+  color: rgb(26, 26, 26);
+}
+
+.tool-right {
+  width: 14rpx;
+  font-size: 28rpx;
+}

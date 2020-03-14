@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<!-- 模板 -->
+<import src='../../templates/content-item/content-item.wxml' />
+<import src='../../templates/tabbar/tabbar.wxml' />
+<!-- 组件 -->
+<navbar id="navbar" type='2' title="美家岛"></navbar>
+
+
+<template is="tabBar" data="{{tabbar,isIpx}}"></template>
+<!-- 当前页内容 -->
+<view class="wrapper" style="min-height:{{windowHeight}}px;background:#f7f7f7;padding-bottom:{{isIpx?'160rpx':'100rpx'}}">
+	<view class="header" style="top:{{headerHeight}}px;">
+		<view class="nav-box">
+			<view class="nav-item {{currentNav==index?'nav-active':''}}" wx:for="{{navList}}" wx:key="index" bindtap="onChangeNav" data-index="{{index}}">
+				<text>{{item.value}}</text>
+			</view>
+		</view>
+		<block wx:if="{{currentNav==0}}">
+			<view class="status-box">
+				<view class="status-item {{fansStatus==index?'status-active':''}}" wx:for="{{fansStatusList}}" wx:key="index" bindtap="onChangeFansStatus" data-index="{{index}}">
+					<text>{{item.value}}</text>
+				</view>
+			</view>
+		</block>
+		<block wx:if="{{currentNav==2}}">
+			<view class="status-box">
+				<view class="status-item {{currentStatus==index?'status-active':''}}" wx:for="{{statusList}}" wx:key="index" bindtap="onChangeStatus" data-index="{{index}}">
+					<text>{{item.value}}</text>
+				</view>
+			</view>
+		</block>
+
+		<!-- 测试微信组手 -->
+		<!-- <button bindtap="onIntoChat">点我</button> -->
+
+		<view class="search-box">
+			<van-icon name="search" class="search-icon" bindtap="onSearch" />
+			<input type="text" class="search-input" confirm-type="search" bindconfirm="onSearch" placeholder="请输入想查找的客户名称" bindinput="onInput" value="{{value}}"></input>
+		</view>
+		<view class="header-tip">
+			<block wx:if="{{currentNav==0}}">
+				<view class="header-tip-item">今日新增<text>{{today_num}}</text>位粉丝
+				</view>
+				<view class="header-tip-item">共<text>{{total_num}}</text>位粉丝
+				</view>
+			</block>
+			<block wx:if="{{currentNav==1}}">
+				<view class="header-tip-item">今天新增<text>{{today_num}}</text>位报名
+				</view>
+				<view class="header-tip-item">共<text>{{not_deal_num}}</text>位客户未跟进
+				</view>
+			</block>
+			<block wx:if="{{currentNav==2}}">
+				<view class="header-tip-item">共<text>{{total_num}}</text>位客户
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class="header-blank" style="width:100vw;height:{{currentNav==1?'280rpx':'346rpx'}};background:#f7f7f7;"></view>
+	<!-- <web-view src="https://shr.yfway.com/index.php?s=/WX/GuideManage/index/v/2"></web-view> -->
+	<block wx:if="{{currentNav==0}}">
+		<view wx:if="{{!fansList||fansList.length==0}}" style="text-align:center;">暂无更多!</view>
+		<block wx:for="{{fansList}}" wx:key="index">
+			<template is="content-item" data="{{...item,currentNav}}"></template>
+		</block>
+
+	</block>
+	<block wx:if="{{currentNav==1}}">
+		<view wx:if="{{!contantList||contantList.length==0}}" style="text-align:center;">暂无更多!</view>
+		<block wx:for="{{contantList}}" wx:key="index">
+			<template is="content-item" data="{{...item,currentNav}}"></template>
+		</block>
+	</block>
+	<block wx:if="{{currentNav==2}}">
+		<view wx:if="{{!buildList||buildList.length==0}}" style="text-align:center;">暂无更多!</view>
+		<block wx:for="{{buildList}}" wx:key="index">
+			<template is="content-item" data="{{...item,currentNav}}"></template>
+		</block>
+	</block>
+</view>

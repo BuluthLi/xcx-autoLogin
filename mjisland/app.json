@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/web/web",
+    "pages/user/user",
+    "pages/share/share",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "美家岛",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+
+  "tabBar": {
+    "borderStyle": "black",
+    "color": "#bcbcbc",
+    "selectedColor": "#ee3a1f",
+    "list": [{
+      "text": "客户管理",
+      "pagePath": "pages/index/index"
+    }, {
+      "text": "个人中心",
+      "pagePath": "pages/user/user"
+    }]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx72eee61e991e65a1"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+
+  "usingComponents": {
+    "van-button": "@vant/weapp/button",
+    "van-icon": "@vant/weapp/icon",
+    "van-search": "@vant/weapp/search/index",
+    "navbar": "/components/navbar/nav",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  }
+}

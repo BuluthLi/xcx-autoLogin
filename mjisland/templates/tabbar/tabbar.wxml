@@ -1,0 +1,19 @@
+<template name="tabBar">
+	<view class="bottom-nav cf">
+		<view class="bottom-nav-box" style="{{ isIpx ? 'height: 120rpx;' : 'height:100rpx' }}">
+			<view class="bottom-nav-l">
+				<navigator url='/pages/index/index' open-type='switchTab' hover-class='none'>
+					<image src="{{tabbar =='index' ? '/images/icons/customer-selected.png' : '/images/icons/customer.png'}}" mode='aspectFit'></image>
+					<text style="{{tabbar =='index' ? 'color:#ee3a1f;' : '#bcbcbc'}}">首页</text>
+				</navigator>
+			</view>
+			<view class="bottom-nav-r">
+				<navigator url='/pages/user/user' open-type='switchTab' hover-class='none' style="position:relative;">
+					<image src="{{tabbar =='user' ? '/images/icons/person-selected.png' : '/images/icons/person.png'}}" mode='aspectFit'></image>
+					<text style="{{tabbar =='user' ? 'color:#ee3a1f;' : '#bcbcbc'}}">个人中心</text>
+				</navigator>
+			</view>
+		</view>
+		<view wx:if="{{isIpx}}" style="width:100%;height:20px;background:white;"></view>
+	</view>
+</template>

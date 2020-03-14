@@ -1,0 +1,33 @@
+<!--pages/user/user.wxml-->
+<!-- 模板 -->
+<import src='../../templates/tabbar/tabbar.wxml' />
+<template is="tabBar" data="{{tabbar,isIpx}}"></template>
+<!-- 组件 -->
+<navbar id="navbar" type='2' title="个人中心"></navbar>
+<view class="wrapper" style="width:100vw;height:{{windowHeight}}px;background:#F7F7F7;">
+	<view class="user-box" bindtap="onIntoWeb" data-type="0">
+		<image class="user-avatar" src="{{guideMsg.face}}"></image>
+		<view class="name-box">
+			<view class="user-name">{{guideMsg.guide_name}}</view>
+			<view class="shop-name">{{guideMsg.shop_name}}</view>
+		</view>
+		<van-icon name="arrow" color="rgb(208,208,208)" class="tool-right" />
+	</view>
+	<view class="tool-box">
+		<view class="tool-item" bindtap="onIntoWeb" data-type="1">
+			<image class="tool-icon" src="/images/icons/user-icon1.png" mode="widthFix"></image>
+			<view class="tool-title">加粉二维码</view>
+			<van-icon name="arrow" color="rgb(208,208,208)" class="tool-right" />
+		</view>
+		<!-- <view class="tool-item" bindtap="onIntoWeb" data-type="2">
+			<image class="tool-icon" src="/images/icons/user-icon2.png" mode="widthFix"></image>
+			<view class="tool-title">接待统计</view>
+			<van-icon name="arrow" color="rgb(208,208,208)" class="tool-right" />
+		</view> -->
+		<view class="tool-item" bindtap="onIntoWeb" data-type="3">
+			<image class="tool-icon" src="/images/icons/user-icon3.png" mode="widthFix"></image>
+			<view class="tool-title">回到旧版</view>
+			<van-icon name="arrow" color="rgb(208,208,208)" class="tool-right" />
+		</view>
+	</view>
+</view>

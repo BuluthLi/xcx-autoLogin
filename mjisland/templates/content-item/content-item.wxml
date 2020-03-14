@@ -1,0 +1,70 @@
+<template name="content-item">
+	<view class="content-item-wrapper">
+
+		<view class="content-top-box">
+			<view class="avatar">
+				<image src="{{face}}"></image>
+			</view>
+			<view class="desc">
+				<view class="desc-title">
+					<view class="desc-title-text">{{name}}</view>
+					<block wx:if="{{currentNav==0}}">
+						<view class="item-status {{(register&&register==1)?'orange':'green'}}">
+							{{(register&&register==1)?'@已登记':'@未登记'}}
+						</view>
+					</block>
+					<block wx:if="{{currentNav==2}}">
+						<view class="item-status {{(guide_type&&guide_type==2)?'orange':'green'}}">
+							{{(guide_type==1)?'@已转尺':guide_type==2?'@异地尺':'@转总部'}}
+						</view>
+					</block>
+				</view>
+				<block wx:if="{{currentNav==0}}">
+					<view class="desc-text">加粉时间：{{ctime}}</view>
+				</block>
+				<block wx:if="{{currentNav==1}}">
+					<view class="desc-text">预约时间：{{ctime}}</view>
+					<view class="desc-text">{{city}}</view>
+				</block>
+				<block wx:if="{{currentNav==2}}">
+					<view class="desc-text">
+						<view class="desc-text-key">建单时间</view>
+						<view class="desc-text-value">{{ctime}}</view>
+					</view>
+					<view class="desc-text">
+						<view class="desc-text-key">客户号</view>
+						<view class="desc-text-value">{{cid}}</view>
+					</view>
+					<view class="desc-text">
+						<view class="desc-text-key">状态</view>
+						<view class="desc-text-value">{{currentStatus==0?'待量尺':currentNav==1?'已量尺':'已安装'}}</view>
+					</view>
+					<view class="desc-text">
+						<view class="desc-text-key">设计师</view>
+						<view class="desc-text-value">{{designer}}{{shop}}</view>
+					</view>
+				</block>
+				<block wx:if="{{tag&&tag.length>0}}">
+					<view class="content-bottom-box tags-list">
+						<view class="tag-item" wx:for="{{tag}}" wx:key="index">{{item}}</view>
+					</view>
+				</block>
+			</view>
+
+			<view class="tool-box">
+				<view class="tool-item wechat" bindtap="onIntoChat" data-path="{{path}}" style="background:{{(path&&path!='')?'':'#DDDDDD'}}">
+					<!-- {{path}} -->
+					<image src="/images/icons/wechat.png" mode="widthFix"></image>
+				</view>
+				<block wx:if="{{currentNav!=0}}">
+					<view class="tool-item call" bindtap="onCall" data-phone="{{phone}}">
+						<image src="/images/icons/call.png" mode="widthFix"></image>
+					</view>
+				</block>
+				<view class="tool-item step special-step" bindtap="onStep" data-url="{{url}}" wx:if="{{currentNav==0}}">登记</view>
+				<view class="tool-item step" bindtap="onStep" data-url="{{url}}" wx:if="{{currentNav==1}}">建单</view>
+				<view class="tool-item step" bindtap="onStep" data-url="{{url}}" wx:if="{{currentNav==2&&url!=''}}">详情</view>
+			</view>
+		</view>
+	</view>
+</template>

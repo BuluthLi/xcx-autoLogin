@@ -1,0 +1,20 @@
+<!--pages/share/share.wxml-->
+
+
+<!-- 组件 -->
+<navbar id="navbar" type='1' title="客户管理"></navbar>
+<view class="wrapper" style="width:100vw;height:{{windowHeight}}px;overflow:{{sharePath==''?'hidden':'visible'}}">
+	<view class="success-box" style="width:100vw;height:{{windowHeight}}px;position:relative;">
+		<view class="tip" wx:if="{{sharePath==''}}">{{tips}}</view>
+		<block wx:else>
+			<image src="/images/show-bg.png" mode="widthFix" style="width:100vw;height:auto;"></image>
+			<image src="{{sharePath}}" mode="widthFix" style="width:68vw;height:auto;position:absolute;z-index:1;top:28rpx;left:16vw;box-shadow: 0 6rpx 30rpx 0 #e6dcdc;"></image>
+			<!-- <button open-type='share' class="btn-share tool-btn">转发名片</button> -->
+			<button bindtap="onSave" class="btn-save tool-btn">保存到手机</button>
+		</block>
+	</view>
+	<block wx:if="{{sharePath==''}}">
+		<canvas canvas-id="main" style="width:750px;height: {{cvh}}px;opacity: 0;position:absolute;z-index:1;top:0;left:750px;"></canvas>
+		<canvas style="width: 686rpx;height: 686rpx;opacity: 0;position:absolute;z-index:1;top:0;left:100vw;" canvas-id="mycanvas" />
+	</block>
+</view>

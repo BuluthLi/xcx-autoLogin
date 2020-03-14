@@ -1,0 +1,6 @@
+/**app.wxss**/
+
+.wrapper {
+  font-size: 24rpx;
+  color: #595959;
+}

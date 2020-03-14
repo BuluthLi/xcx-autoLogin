@@ -1,0 +1,21 @@
+<!--pages/components/navbar/nav.wxml-->
+<view class='top-navbar' style="height:{{height}}px;">
+	<!-- <view class='status-box' style='top:{{height-45}}px;'> -->
+	<view class='status-box' style='top:{{height-46}}px;'>
+		<!-- 放定义的内容 -->
+		<block wx:if="{{type===1}}">
+			<view class='top-icon-box'>
+				<van-icon name="arrow-left" bindtap="onBack" class='top-back' />
+				<view class='top-split-line'></view>
+				<van-icon name="wap-home-o" bindtap="onIndex" class='top-index' />
+			</view>
+		</block>
+		<block wx:if="{{type===2}}">
+			<image src='/images/logo.png' class='nav-logo'></image>
+		</block>
+
+		<view class='navbar-item top-title'>{{title}}</view>
+		<view style='width:88px;height:33px;'></view>
+	</view>
+</view>
+<view class='blank' style="height:{{height}}px;"></view>

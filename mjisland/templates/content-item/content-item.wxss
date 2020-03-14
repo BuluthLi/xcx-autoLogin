@@ -1,0 +1,153 @@
+.content-item-wrapper {
+  background: white;
+  padding: 20rpx;
+  font-size: 24rpx;
+  line-height: 1.5;
+  color: #595959;
+  width: 710rpx;
+  box-sizing: border-box;
+  margin: 0 auto 20rpx auto;
+  border-radius: 10rpx;
+}
+
+.content-top-box {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  flex: 0 0 120rpx;
+}
+
+.avatar image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+}
+
+.desc {
+  flex: 1 1 auto;
+  margin: 0 60rpx 0 20rpx;
+}
+
+.desc-title {
+  max-width: 320rpx;
+  font-size: 28rpx;
+  color: rgb(26, 26, 26);
+
+  display: flex;
+}
+
+.desc-title-text {
+  width: auto;
+  max-width: clac(100% - 80rpx);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desc-text {
+  font-size: 20rpx;
+  color: rgb(204, 204, 204);
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc-text-key {
+  color: #CCCCCC;
+  flex: 1 0 auto;
+
+}
+
+.desc-text-value {
+  color: #999999;
+  flex: 1 1 auto;
+  margin-left: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.item-status {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 20rpx;
+  flex: 1 0 auto;
+  margin-left: 10rpx;
+}
+
+
+.content-bottom-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.tag-item {
+  padding: 4rpx 20rpx;
+  background-color: #FFDFD8;
+  margin-right: 10rpx;
+  color: #D53B38;
+  margin-top: 16rpx;
+  border-radius: 4rpx;
+}
+
+.tool-box {
+  background-color: white;
+}
+
+.tool-item {
+  width: 124rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26rpx;
+  margin-top: 20rpx;
+}
+
+.tool-item:first-child {
+  margin-top: 0;
+}
+
+.tool-item image {
+  width: 32rpx;
+  height: auto;
+}
+
+.wechat {
+  background-color: rgb(31, 184, 39);
+}
+
+.wechat image {
+  width: 100%;
+}
+
+.call {
+  background-color: rgb(0, 186, 227);
+}
+
+.step {
+  background-color: white;
+  color: rgb(238, 58, 31);
+  border: 2rpx solid rgb(238, 58, 31);
+}
+
+.special-step {
+  color: white;
+  background-color: rgb(238, 58, 31);
+}
+
+.green {
+  color: #007C25;
+}
+
+.orange {
+  color: #FF5D5E;
+}

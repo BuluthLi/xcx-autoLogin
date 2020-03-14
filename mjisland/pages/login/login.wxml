@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+
+<!-- 组件 -->
+<navbar id="navbar" type='2' title="授权登录"></navbar>
+<view class="wrapper" style="height:{{windowHeight}}px;">
+	<image src="/images/login-banner.png" mode="widthFix" class="logo-banner"></image>
+	<image src="/images/logo.png" class="logo"></image>
+	<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="btn-share tool-btn" wx:if="{{flag!=1}}">授权登录</button>
+	<button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="btn-share tool-btn" wx:if="{{flag==1}}">测试人员</button>
+
+	<button bindtap="onCancel" class="btn-save tool-btn">暂不授权</button>
+	<view class="tip">* 美家岛小程序仅供内部团长、导购使用，客户、设计师不能使用哦</view>
+</view>
